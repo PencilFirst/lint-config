@@ -1,0 +1,46 @@
+{
+  "workspaces": [
+    "packages/components/**/*"
+  ],
+  "scripts": {
+    "postinstall": "is-ci || husky install",
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "lint:script": "eslint --ext \".ts,.vue\" --ignore-path .gitignore .",
+    "fix:script": "eslint --fix --ext \".ts,.vue\" --ignore-path .gitignore .",
+    "lint:style": "stylelint \"**/*.{vue,scss}\" --ignore-path .gitignore",
+    "fix:style": "stylelint --fix \"**/*.{vue,scss}\" --ignore-path .gitignore",
+    "lint": "yarn lint:script && yarn lint:style",
+  },
+  "dependencies": {
+    "vue": "3.2.33"
+  },
+  "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "5.4.0",
+    "@typescript-eslint/parser": "5.4.0",
+    "@vitejs/plugin-vue": "2.3.1",
+    "@vue/eslint-config-typescript": "9.1.0",
+    "eslint": "7.32.0",
+    "eslint-config-prettier": "8.3.0",
+    "eslint-plugin-prettier": "4.0.0",
+    "eslint-plugin-vue": "8.0.3",
+    "husky": "7.0.4",
+    "is-ci": "3.0.1",
+    "lint-staged": "11.1.2",
+    "postcss": "^8.4.13",
+    "postcss-html": "1.4.1",
+    "prettier": "2.4.1",
+    "sass": "1.51.0",
+    "stylelint": "14.8.2",
+    "stylelint-config-prettier": "9.0.3",
+    "stylelint-config-recommended-vue": "1.4.0",
+    "vite": "2.9.5",
+    "yalc": "1.0.0-pre.53"
+  },
+  "lint-staged": {
+    "*.{ts,vue}": "eslint --fix",
+    "*.{scss,vue}": "stylelint --fix"
+  },
+  "packageManager": "yarn@3.2.0"
+}

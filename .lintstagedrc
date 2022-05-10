@@ -1,0 +1,8 @@
+{
+  "src/**/*.{js,vue}": [
+    "npm run lint"
+  ],
+  "src/**/*.{css,scss,vue}":[
+    "npm run style:fix"
+  ]
+}
